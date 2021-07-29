@@ -1,0 +1,14 @@
+<div
+  style="
+    background: aqua;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  "
+>
+  <ng-container *ngIf="filePath">
+    <div></div>
+    <img [src]="filePath" alt="" width="100" height="100" />
+  </ng-container>
+</div>

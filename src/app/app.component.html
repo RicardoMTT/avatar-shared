@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="container" style="display: flex">
+  <app-sidebar></app-sidebar>
+  <div>
+    <div class="contenedor">
+      <div class="contenedor_formulario">
+        <h1 class="is-size-1">Subir archivos a Cloud Storage</h1>
+        {{ URLPublica }}
+        <p class="download" *ngIf="finalizado">
+          URL de descarga:
+          <a href="{{ URLPublica }}" target="_blank">Descargar</a>
+        </p>
+        <form [formGroup]="archivoForm">
+          <div class="file has-name is-boxed">
+            <label class="file-label">
+              <input
+                class="file-input"
+                type="file"
+                formControlName="archivo"
+                (change)="chooseFile($event)"
+              />
+            </label>
+          </div>
+          <hr />
+          <ng-container *ngIf="isLoading">
+            <span>loading...</span>
+          </ng-container>
+          <button [disabled]="isLoading">Subir archivo</button>
+          <div *ngIf="filePath && filePath !== ''">
+            <img [src]="filePath" width="100" height="100" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <ng-container *ngIf="imagenURL">
+      <p>lor</p>
+      <img [src]="imagenURL" alt="" width="100" height="100" />
+    </ng-container>
+  </div>
+</div>
