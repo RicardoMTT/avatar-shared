@@ -1,15 +1,10 @@
 <app-navbar></app-navbar>
 <div class="container" style="display: flex">
   <app-sidebar></app-sidebar>
-  <div>
+  <section>
     <div class="contenedor">
       <div class="contenedor_formulario">
-        <h1 class="is-size-1">Subir archivos a Cloud Storage</h1>
-        {{ URLPublica }}
-        <p class="download" *ngIf="finalizado">
-          URL de descarga:
-          <a href="{{ URLPublica }}" target="_blank">Descargar</a>
-        </p>
+        <h1 class="is-size-1">Compartir información entre componentens</h1>
         <form [formGroup]="archivoForm">
           <div class="file has-name is-boxed">
             <label class="file-label">
@@ -32,9 +27,5 @@
         </form>
       </div>
     </div>
-    <ng-container *ngIf="imagenURL">
-      <p>lor</p>
-      <img [src]="imagenURL" alt="" width="100" height="100" />
-    </ng-container>
-  </div>
+  </section>
 </div>

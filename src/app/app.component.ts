@@ -8,6 +8,7 @@ import { AvatarService } from './services/avatar.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+
   title = 'avatar-shared-angular';
   constructor(private avatarService: AvatarService) {}
   public archivoForm = new FormGroup({
@@ -18,7 +19,6 @@ export class AppComponent {
   public isLoading = false;
 
   filePath;
-  imagenURL;
   public selectedFile: File;
 
   chooseFile(event) {
